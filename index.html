@@ -11,7 +11,8 @@
   <link rel="icon" href="./New folder/logo.png" />
   <title>Spotify-Music Player for Everyone</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -145,10 +146,23 @@
         </div>
 
       </div>
+      <div class="form-container">
+
+        <form onsubmit="sendEmail(); reset(); return false;">
+          <h3>Contact Me for more Frontend Websites</h3>
+          <input type="text" id="name" placeholder="Your Name" required>
+          <input type="email" id="email" placeholder="Email id" required>
+          <input type="text" id="Phone" placeholder="Phone No." required>
+          <textarea name="" id="message" cols="30" rows="10" placeholder="How Can I help you...?"></textarea>
+          <button type="submit">Submit</button>
+        </form>
+
+      </div>
       <div class="footer">
         <div class="line">
 
         </div>
+
       </div>
       <!-- </div> -->
 
@@ -156,16 +170,16 @@
         <div class="album">
           <img src="./New folder/card4img.jpeg" alt="">
           <div class="details lefthide">
-          <p class="song" style="font-weight: 600; left: 1rem;"> Never Fold</p>
-          <p style="font-weight: 300;opacity: 0.5;"> Sidhhu Moose Wala...</p>
-        </div>
-        <div class="like hide">
-          <i class="fa-regular fa-heart" style="margin-bottom: 0.35rem;"></i>
-          <span class="material-symbols-outlined" style="margin-left: 1rem;">
-            connected_tv
+            <p class="song" style="font-weight: 600; left: 1rem;"> Never Fold</p>
+            <p style="font-weight: 300;opacity: 0.5;"> Sidhhu Moose Wala...</p>
+          </div>
+          <div class="like hide">
+            <i class="fa-regular fa-heart" style="margin-bottom: 0.35rem;"></i>
+            <span class="material-symbols-outlined" style="margin-left: 1rem;">
+              connected_tv
             </span>
+          </div>
         </div>
-      </div>
         <div class="player">
           <div class="player-controls">
             <img src="./New folder/player_icon1.png" alt="">
@@ -180,22 +194,44 @@
             <span class="total=time">3:33</span>
           </div>
         </div>
-        <div class="control righthide" >
+        <div class="control righthide">
           <span class="material-symbols-outlined">
             smart_display
-            </span>
-            <span class="material-symbols-outlined">
-              mic
-              </span>
-         
+          </span>
+          <span class="material-symbols-outlined">
+            mic
+          </span>
+
           <span class="material-symbols-outlined">
             volume_up
-            </span>
-             
+          </span>
+
           <i class="fa-solid fa-list"></i>
         </div>
       </div>
     </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+      function sendEmail() {
+        Email.send({
+          Host: "smtp.elasticemail.com",
+          Username: "singhsangeet037@gmail.com",
+          Password: "BAAFBDCD22005BB74FF289366CFC50EC78A2",
+          To: 'ps555239@gmail.com',
+          From: 'singhsangeet037@gmail.com',
+          Subject: "New contact form Enquiry",
+          Body:'Name='+ document.getElementById('name').value+
+          '<br/> Number='+document.getElementById('Phone').value+
+          ' <br/>Email='+ document.getElementById('email').value+
+          '<br/>Message='+ document.getElementById('message').value,
+        }).then(
+          message => alert(message)
+        );
+        
+      }
+    </script>
 </body>
 
 </html>
